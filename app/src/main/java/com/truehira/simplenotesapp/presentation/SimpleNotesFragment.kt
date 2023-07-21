@@ -47,7 +47,7 @@ class SimpleNotesFragment : Fragment() {
 
     private fun setupSimpleNotesAdapter() {
         simpleNotesAdapter = SimpleNotesAdapter {
-            navigateToDetailScreen(it.id)
+            navigateToDetailScreen(it.id!!)
         }
     }
 

@@ -120,7 +120,7 @@ class SimpleNotesDetailFragment : Fragment() {
             val noteTitle = binding.etNoteDetailEditableTitle.text.toString()
             val noteContent = binding.etNoteDetailEditableContent.text.toString()
             if(args.noteId == -1){
-                viewModel.insertSimpleNote(SimpleNote(-1, noteTitle, noteContent))
+                viewModel.insertSimpleNote(SimpleNote(title =  noteTitle, content = noteContent))
             }else{
                 viewModel.updateSimpleNote(noteTitle, noteContent)
             }
