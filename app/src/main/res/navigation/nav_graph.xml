@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/simpleNotesFragment">
+
+    <fragment
+        android:id="@+id/simpleNotesDetailFragment"
+        android:name="com.truehira.simplenotesapp.presentation.SimpleNotesDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_simple_notes_detail">
+        <argument
+            android:name="noteId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_simpleNotesDetailFragment_to_deleteSimpleNoteConfirmationDialogFragment"
+            app:destination="@id/deleteSimpleNoteConfirmationDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/simpleNotesFragment"
+        android:name="com.truehira.simplenotesapp.presentation.SimpleNotesFragment"
+        android:label="@string/simple_notes_app"
+        tools:layout="@layout/fragment_simple_notes">
+        <action
+            android:id="@+id/action_simpleNotesFragment_to_simpleNotesDetailFragment"
+            app:destination="@id/simpleNotesDetailFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/deleteSimpleNoteConfirmationDialogFragment"
+        android:name="com.truehira.simplenotesapp.presentation.DeleteSimpleNoteConfirmationDialogFragment"
+        android:label="fragment_delete_simple_note_confirmation_dialog"
+        tools:layout="@layout/fragment_delete_simple_note_confirmation_dialog" />
+</navigation>

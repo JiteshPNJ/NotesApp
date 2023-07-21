@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:cardCornerRadius="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.DeleteSimpleNoteConfirmationDialogFragment">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDialogTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="25sp"
+                android:layout_marginVertical="25dp"
+                android:text="@string/confirmation_dialog"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvDialogDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/are_you_sure_you_want_to_delete_this_note"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/btnWeightToggleGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDelete"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:insetBottom="0dp"
+                    android:insetTop="0dp"
+                    android:textAllCaps="false"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yes"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCancel"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:insetBottom="0dp"
+                    android:insetTop="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+</androidx.cardview.widget.CardView>
