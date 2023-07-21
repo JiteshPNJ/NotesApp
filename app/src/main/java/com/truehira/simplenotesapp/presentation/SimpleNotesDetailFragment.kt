@@ -27,6 +27,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.truehira.simplenotesapp.R
 import com.truehira.simplenotesapp.databinding.FragmentSimpleNotesDetailBinding
+import com.truehira.simplenotesapp.domain.model.SimpleNote
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -118,7 +119,12 @@ class SimpleNotesDetailFragment : Fragment() {
         if (viewModel.shouldSaveNote) {
             val noteTitle = binding.etNoteDetailEditableTitle.text.toString()
             val noteContent = binding.etNoteDetailEditableContent.text.toString()
-            viewModel.updateSimpleNote(noteTitle, noteContent)
+            if(args.noteId == -1){
+                viewModel.insertSimpleNote(SimpleNote(-1, noteTitle, noteContent))
+            }else{
+                viewModel.updateSimpleNote(noteTitle, noteContent)
+            }
+
         }
         menuHost.removeMenuProvider(menuProvider)
 
